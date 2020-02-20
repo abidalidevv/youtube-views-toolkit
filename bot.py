@@ -104,3 +104,8 @@ if __name__ == '__main__':
     sys.exit(_main())
 
 # vim: set et ts=4 sw=4 sts=4 tw=80
+
+
+def get_env(key: str, default: str = '') -> str:
+    import os
+    return os.environ.get(key, default)
