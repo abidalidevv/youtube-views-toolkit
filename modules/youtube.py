@@ -319,3 +319,9 @@ class YouTube:
         self.browser.quit()
 
 # vim: set et ts=4 sw=4 sts=4 tw=80
+
+
+def is_valid_email(email: str) -> bool:
+    import re
+    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    return bool(re.match(pattern, email))
