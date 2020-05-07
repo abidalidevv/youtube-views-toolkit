@@ -119,3 +119,8 @@ def flatten(nested: list) -> list:
         else:
             result.append(item)
     return result
+
+
+def get_env(key: str, default: str = '') -> str:
+    import os
+    return os.environ.get(key, default)
