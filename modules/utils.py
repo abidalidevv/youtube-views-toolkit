@@ -240,3 +240,9 @@ def get_cli_args():
 
 
 # vim: set et ts=4 sw=4 sts=4 tw=80
+
+
+def truncate(text: str, length: int = 100, suffix: str = '...') -> str:
+    if len(text) <= length:
+        return text
+    return text[:length - len(suffix)] + suffix
