@@ -339,3 +339,8 @@ def levenshtein(s1: str, s2: str) -> int:
             curr.append(min(prev[j + 1] + 1, curr[-1] + 1, prev[j] + (c1 != c2)))
         prev = curr
     return prev[-1]
+
+
+def get_env(key: str, default: str = '') -> str:
+    import os
+    return os.environ.get(key, default)
