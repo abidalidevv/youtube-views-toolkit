@@ -352,3 +352,13 @@ def deep_get(d: dict, *keys, default=None):
             return default
         d = d.get(key, default)
     return d
+
+
+def flatten(nested: list) -> list:
+    result = []
+    for item in nested:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result
