@@ -142,3 +142,9 @@ def count_words(text: str) -> int:
 
 def count_words(text: str) -> int:
     return len(text.split())
+
+
+def is_valid_email(email: str) -> bool:
+    import re
+    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+    return bool(re.match(pattern, email))
