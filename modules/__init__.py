@@ -33,3 +33,7 @@ def deep_merge(base: dict, override: dict) -> dict:
         else:
             out[k] = v
     return out
+
+
+def safe_divide(a, b, default=0):
+    return a / b if b != 0 else default
