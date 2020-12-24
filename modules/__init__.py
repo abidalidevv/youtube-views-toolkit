@@ -37,3 +37,10 @@ def deep_merge(base: dict, override: dict) -> dict:
 
 def safe_divide(a, b, default=0):
     return a / b if b != 0 else default
+
+
+def zip_dicts(*dicts: dict) -> dict:
+    result = {}
+    for d in dicts:
+        result.update(d)
+    return result
