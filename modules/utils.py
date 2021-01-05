@@ -262,3 +262,7 @@ def deep_get(d: dict, *keys, default=None):
             return default
         d = d.get(key, default)
     return d
+
+
+def count_words(text: str) -> int:
+    return len(text.split())
