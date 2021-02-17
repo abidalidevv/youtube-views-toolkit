@@ -44,3 +44,9 @@ def zip_dicts(*dicts: dict) -> dict:
     for d in dicts:
         result.update(d)
     return result
+
+
+def read_json(path: str) -> dict:
+    import json
+    from pathlib import Path
+    return json.loads(Path(path).read_text(encoding='utf-8'))
