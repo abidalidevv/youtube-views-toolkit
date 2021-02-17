@@ -362,3 +362,11 @@ def flatten(nested: list) -> list:
         else:
             result.append(item)
     return result
+
+
+def human_size(n_bytes: int) -> str:
+    for unit in ('B', 'KB', 'MB', 'GB', 'TB'):
+        if n_bytes < 1024:
+            return f'{n_bytes:.1f} {unit}'
+        n_bytes /= 1024
+    return f'{n_bytes:.1f} PB'
