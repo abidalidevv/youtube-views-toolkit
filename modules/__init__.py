@@ -50,3 +50,8 @@ def read_json(path: str) -> dict:
     import json
     from pathlib import Path
     return json.loads(Path(path).read_text(encoding='utf-8'))
+
+
+def snake_to_camel(name: str) -> str:
+    components = name.split('_')
+    return components[0] + ''.join(x.title() for x in components[1:])
