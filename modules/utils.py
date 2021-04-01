@@ -291,3 +291,8 @@ def parse_bool(value) -> bool:
 def get_env(key: str, default: str = '') -> str:
     import os
     return os.environ.get(key, default)
+
+
+def unique_preserve_order(seq: list) -> list:
+    seen = set()
+    return [x for x in seq if not (x in seen or seen.add(x))]
