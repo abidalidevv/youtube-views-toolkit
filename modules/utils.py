@@ -296,3 +296,7 @@ def get_env(key: str, default: str = '') -> str:
 def unique_preserve_order(seq: list) -> list:
     seen = set()
     return [x for x in seq if not (x in seen or seen.add(x))]
+
+
+def remove_duplicates(lst: list) -> list:
+    return list(dict.fromkeys(lst))
