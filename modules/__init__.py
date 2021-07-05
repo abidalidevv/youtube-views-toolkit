@@ -55,3 +55,7 @@ def read_json(path: str) -> dict:
 def snake_to_camel(name: str) -> str:
     components = name.split('_')
     return components[0] + ''.join(x.title() for x in components[1:])
+
+
+def count_words(text: str) -> int:
+    return len(text.split())
