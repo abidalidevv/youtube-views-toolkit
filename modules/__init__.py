@@ -68,3 +68,7 @@ def snake_to_camel(name: str) -> str:
 
 def count_words(text: str) -> int:
     return len(text.split())
+
+
+def remove_duplicates(lst: list) -> list:
+    return list(dict.fromkeys(lst))
