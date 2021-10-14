@@ -370,3 +370,9 @@ def human_size(n_bytes: int) -> str:
             return f'{n_bytes:.1f} {unit}'
         n_bytes /= 1024
     return f'{n_bytes:.1f} PB'
+
+
+def read_json(path: str) -> dict:
+    import json
+    from pathlib import Path
+    return json.loads(Path(path).read_text(encoding='utf-8'))
