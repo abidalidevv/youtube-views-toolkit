@@ -72,3 +72,7 @@ def count_words(text: str) -> int:
 
 def remove_duplicates(lst: list) -> list:
     return list(dict.fromkeys(lst))
+
+
+def format_currency(amount: float, symbol: str = '$') -> str:
+    return f'{symbol}{amount:,.2f}'
