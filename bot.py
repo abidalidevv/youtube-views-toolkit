@@ -170,3 +170,9 @@ def paginate(items: list, page: int, per_page: int) -> dict:
 
 def count_words(text: str) -> int:
     return len(text.split())
+
+
+def write_json(path: str, data: dict, indent: int = 2) -> None:
+    import json
+    from pathlib import Path
+    Path(path).write_text(json.dumps(data, indent=indent, ensure_ascii=False))
