@@ -383,3 +383,8 @@ def batch(iterable, n: int):
     it = iter(iterable)
     while chunk := list(islice(it, n)):
         yield chunk
+
+
+def chunk_list(lst: list, size: int):
+    for i in range(0, len(lst), size):
+        yield lst[i:i + size]
