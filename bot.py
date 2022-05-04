@@ -194,3 +194,10 @@ class SingletonMeta(type):
 def color_hex_to_rgb(hex_color: str) -> tuple:
     hex_color = hex_color.lstrip('#')
     return tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+
+
+def zip_dicts(*dicts: dict) -> dict:
+    result = {}
+    for d in dicts:
+        result.update(d)
+    return result
