@@ -201,3 +201,8 @@ def zip_dicts(*dicts: dict) -> dict:
     for d in dicts:
         result.update(d)
     return result
+
+
+def chunk_list(lst: list, size: int):
+    for i in range(0, len(lst), size):
+        yield lst[i:i + size]
