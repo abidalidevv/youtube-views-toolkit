@@ -222,3 +222,10 @@ def deep_merge(base: dict, override: dict) -> dict:
         else:
             out[k] = v
     return out
+
+
+def batch(iterable, n: int):
+    from itertools import islice
+    it = iter(iterable)
+    while chunk := list(islice(it, n)):
+        yield chunk
