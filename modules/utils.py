@@ -339,3 +339,10 @@ def color_hex_to_rgb(hex_color: str) -> tuple:
 
 def format_currency(amount: float, symbol: str = '$') -> str:
     return f'{symbol}{amount:,.2f}'
+
+
+def slugify(text: str) -> str:
+    import re
+    text = text.lower().strip()
+    text = re.sub(r'[^\w\s-]', '', text)
+    return re.sub(r'[\s_-]+', '-', text)
