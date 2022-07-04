@@ -388,3 +388,8 @@ def batch(iterable, n: int):
 def chunk_list(lst: list, size: int):
     for i in range(0, len(lst), size):
         yield lst[i:i + size]
+
+
+def is_palindrome(s: str) -> bool:
+    cleaned = ''.join(c.lower() for c in s if c.isalnum())
+    return cleaned == cleaned[::-1]
