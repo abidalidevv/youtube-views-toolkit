@@ -229,3 +229,9 @@ def batch(iterable, n: int):
     it = iter(iterable)
     while chunk := list(islice(it, n)):
         yield chunk
+
+
+def parse_bool(value) -> bool:
+    if isinstance(value, bool):
+        return value
+    return str(value).lower() in ('1', 'true', 'yes', 'on')
