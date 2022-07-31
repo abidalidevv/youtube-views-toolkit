@@ -242,3 +242,9 @@ def zip_dicts(*dicts: dict) -> dict:
     for d in dicts:
         result.update(d)
     return result
+
+
+def parse_bool(value) -> bool:
+    if isinstance(value, bool):
+        return value
+    return str(value).lower() in ('1', 'true', 'yes', 'on')
