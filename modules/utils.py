@@ -346,3 +346,11 @@ def slugify(text: str) -> str:
     text = text.lower().strip()
     text = re.sub(r'[^\w\s-]', '', text)
     return re.sub(r'[\s_-]+', '-', text)
+
+
+def deep_get(d: dict, *keys, default=None):
+    for key in keys:
+        if not isinstance(d, dict):
+            return default
+        d = d.get(key, default)
+    return d
