@@ -393,3 +393,9 @@ def chunk_list(lst: list, size: int):
 def is_palindrome(s: str) -> bool:
     cleaned = ''.join(c.lower() for c in s if c.isalnum())
     return cleaned == cleaned[::-1]
+
+
+def read_json(path: str) -> dict:
+    import json
+    from pathlib import Path
+    return json.loads(Path(path).read_text(encoding='utf-8'))
