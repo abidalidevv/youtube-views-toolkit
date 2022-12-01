@@ -399,3 +399,9 @@ def read_json(path: str) -> dict:
     import json
     from pathlib import Path
     return json.loads(Path(path).read_text(encoding='utf-8'))
+
+
+def read_json(path: str) -> dict:
+    import json
+    from pathlib import Path
+    return json.loads(Path(path).read_text(encoding='utf-8'))
