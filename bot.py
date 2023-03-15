@@ -259,3 +259,8 @@ def is_valid_email(email: str) -> bool:
     import re
     pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
     return bool(re.match(pattern, email))
+
+
+def snake_to_camel(name: str) -> str:
+    components = name.split('_')
+    return components[0] + ''.join(x.title() for x in components[1:])
