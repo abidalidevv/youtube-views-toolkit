@@ -264,3 +264,9 @@ def is_valid_email(email: str) -> bool:
 def snake_to_camel(name: str) -> str:
     components = name.split('_')
     return components[0] + ''.join(x.title() for x in components[1:])
+
+
+def parse_bool(value) -> bool:
+    if isinstance(value, bool):
+        return value
+    return str(value).lower() in ('1', 'true', 'yes', 'on')
