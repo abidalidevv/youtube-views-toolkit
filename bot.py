@@ -270,3 +270,9 @@ def parse_bool(value) -> bool:
     if isinstance(value, bool):
         return value
     return str(value).lower() in ('1', 'true', 'yes', 'on')
+
+
+def camel_to_snake(name: str) -> str:
+    import re
+    s1 = re.sub(r'(.)([A-Z][a-z]+)', r'\1_\2', name)
+    return re.sub(r'([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
