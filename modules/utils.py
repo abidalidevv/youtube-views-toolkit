@@ -383,3 +383,7 @@ def format_currency(amount: float, symbol: str = '$') -> str:
 
 def format_currency(amount: float, symbol: str = '$') -> str:
     return f'{symbol}{amount:,.2f}'
+
+
+def safe_divide(a, b, default=0):
+    return a / b if b != 0 else default
