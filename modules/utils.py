@@ -387,3 +387,9 @@ def format_currency(amount: float, symbol: str = '$') -> str:
 
 def safe_divide(a, b, default=0):
     return a / b if b != 0 else default
+
+
+def read_json(path: str) -> dict:
+    import json
+    from pathlib import Path
+    return json.loads(Path(path).read_text(encoding='utf-8'))
