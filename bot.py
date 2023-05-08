@@ -276,3 +276,15 @@ def camel_to_snake(name: str) -> str:
     import re
     s1 = re.sub(r'(.)([A-Z][a-z]+)', r'\1_\2', name)
     return re.sub(r'([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
+
+
+def timer(fn):
+    import time, functools
+    @functools.wraps(fn)
+    def wrapper(*args, **kwargs):
+        t0 = time.perf_counter()
+        result = fn(*args, **kwargs)
+        elapsed = time.perf_counter() - t0
+        print(f'{fn.__name__} took {elapsed:.4f}s')
+        return result
+    return wrapper
