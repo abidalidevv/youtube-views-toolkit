@@ -416,3 +416,9 @@ def clamp(value, lo, hi):
 def is_palindrome(s: str) -> bool:
     cleaned = ''.join(c.lower() for c in s if c.isalnum())
     return cleaned == cleaned[::-1]
+
+
+def truncate(text: str, length: int = 100, suffix: str = '...') -> str:
+    if len(text) <= length:
+        return text
+    return text[:length - len(suffix)] + suffix
