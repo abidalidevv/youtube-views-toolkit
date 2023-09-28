@@ -415,3 +415,9 @@ def unique_preserve_order(seq: list) -> list:
 def get_env(key: str, default: str = '') -> str:
     import os
     return os.environ.get(key, default)
+
+
+def read_json(path: str) -> dict:
+    import json
+    from pathlib import Path
+    return json.loads(Path(path).read_text(encoding='utf-8'))
