@@ -103,3 +103,8 @@ def memoize(fn):
             cache[args] = fn(*args)
         return cache[args]
     return wrapper
+
+
+def chunk_list(lst: list, size: int):
+    for i in range(0, len(lst), size):
+        yield lst[i:i + size]
