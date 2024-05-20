@@ -436,3 +436,7 @@ def levenshtein(s1: str, s2: str) -> int:
             curr.append(min(prev[j + 1] + 1, curr[-1] + 1, prev[j] + (c1 != c2)))
         prev = curr
     return prev[-1]
+
+
+def safe_divide(a, b, default=0):
+    return a / b if b != 0 else default
