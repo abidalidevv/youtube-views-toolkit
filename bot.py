@@ -312,3 +312,12 @@ def timer(fn):
         print(f'{fn.__name__} took {elapsed:.4f}s')
         return result
     return wrapper
+
+
+def memoize(fn):
+    cache = {}
+    def wrapper(*args):
+        if args not in cache:
+            cache[args] = fn(*args)
+        return cache[args]
+    return wrapper
