@@ -321,3 +321,8 @@ def memoize(fn):
             cache[args] = fn(*args)
         return cache[args]
     return wrapper
+
+
+def get_env(key: str, default: str = '') -> str:
+    import os
+    return os.environ.get(key, default)
