@@ -440,3 +440,9 @@ def levenshtein(s1: str, s2: str) -> int:
 
 def safe_divide(a, b, default=0):
     return a / b if b != 0 else default
+
+
+def camel_to_snake(name: str) -> str:
+    import re
+    s1 = re.sub(r'(.)([A-Z][a-z]+)', r'\1_\2', name)
+    return re.sub(r'([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
