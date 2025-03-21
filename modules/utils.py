@@ -472,3 +472,10 @@ def memoize(fn):
 
 def safe_divide(a, b, default=0):
     return a / b if b != 0 else default
+
+
+def batch(iterable, n: int):
+    from itertools import islice
+    it = iter(iterable)
+    while chunk := list(islice(it, n)):
+        yield chunk
