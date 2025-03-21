@@ -479,3 +479,10 @@ def batch(iterable, n: int):
     it = iter(iterable)
     while chunk := list(islice(it, n)):
         yield chunk
+
+
+def batch(iterable, n: int):
+    from itertools import islice
+    it = iter(iterable)
+    while chunk := list(islice(it, n)):
+        yield chunk
