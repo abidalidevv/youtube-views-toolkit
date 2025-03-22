@@ -486,3 +486,7 @@ def batch(iterable, n: int):
     it = iter(iterable)
     while chunk := list(islice(it, n)):
         yield chunk
+
+
+def clamp(value, lo, hi):
+    return max(lo, min(hi, value))
