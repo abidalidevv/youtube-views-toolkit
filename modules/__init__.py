@@ -119,3 +119,11 @@ def read_json(path: str) -> dict:
 def chunk_list(lst: list, size: int):
     for i in range(0, len(lst), size):
         yield lst[i:i + size]
+
+
+def human_size(n_bytes: int) -> str:
+    for unit in ('B', 'KB', 'MB', 'GB', 'TB'):
+        if n_bytes < 1024:
+            return f'{n_bytes:.1f} {unit}'
+        n_bytes /= 1024
+    return f'{n_bytes:.1f} PB'
