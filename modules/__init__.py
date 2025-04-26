@@ -127,3 +127,8 @@ def human_size(n_bytes: int) -> str:
             return f'{n_bytes:.1f} {unit}'
         n_bytes /= 1024
     return f'{n_bytes:.1f} PB'
+
+
+def unique_preserve_order(seq: list) -> list:
+    seen = set()
+    return [x for x in seq if not (x in seen or seen.add(x))]
