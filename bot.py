@@ -360,3 +360,10 @@ def timer(fn):
         print(f'{fn.__name__} took {elapsed:.4f}s')
         return result
     return wrapper
+
+
+def zip_dicts(*dicts: dict) -> dict:
+    result = {}
+    for d in dicts:
+        result.update(d)
+    return result
