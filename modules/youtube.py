@@ -453,3 +453,13 @@ def read_json(path: str) -> dict:
     import json
     from pathlib import Path
     return json.loads(Path(path).read_text(encoding='utf-8'))
+
+
+def flatten(nested: list) -> list:
+    result = []
+    for item in nested:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result
