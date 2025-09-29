@@ -511,3 +511,10 @@ def memoize(fn):
             cache[args] = fn(*args)
         return cache[args]
     return wrapper
+
+
+def zip_dicts(*dicts: dict) -> dict:
+    result = {}
+    for d in dicts:
+        result.update(d)
+    return result
